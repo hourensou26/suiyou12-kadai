@@ -210,7 +210,25 @@ mysql内のMySQLサーバーに接続するためにコンテナを起動しま�
   docker compose up
   ```
 ### 4. データベース・テーブルの作成
-dockerコマンドを使用しMySQLコンテナ内に入ります。
+
+#### 4-1. dockerコマンドを使用しMySQLコンテナ内に入ります。
 ```powershell
 docker exec -it mysql-kadai mysql
 ```
+
+#### 4-2. データベースの作成
+```powershell
+create database kadai;
+```
+
+#### 4-3. テーブルの作成
+```powershell
+CREATE TABLE `kadai_post` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `body` TEXT NOT NULL,
+    `image_filename` TEXT DEFAULT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
