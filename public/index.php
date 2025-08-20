@@ -46,6 +46,7 @@ $select_sth->execute();
 </head>
 
 <!-- フォームのPOST先はこのファイル自身にする -->
+<h2>掲示板だよ</h2>
 <form method="POST" action="./index.php" enctype="multipart/form-data">
   <textarea name="body" required></textarea>
   <div style="margin: 1em 0;">
