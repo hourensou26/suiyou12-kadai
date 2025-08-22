@@ -216,9 +216,10 @@ mysql内のMySQLサーバーに接続するためにコンテナを起動しま�
 docker exec -it mysql-kadai mysql
 ```
 
-#### 4-2. データベースの作成
+#### 4-2. データベースの作成と使用
 ```powershell
-create database kadai;
+CREATE DATABASE kadai;
+USE kadai;
 ```
 
 #### 4-3. テーブルの作成
