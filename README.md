@@ -248,33 +248,33 @@ document.addEventListener("DOMContentLoaded", () => {
 ### 3. 実行
 mysql内のMySQLサーバーに接続するためにコンテナを起動します
 1. プロジェクトディレクトリに移動
-  ```powershell
+  ```bash
   cd zenkikadai
   ```
 2. Dockerイメージをビルド
-  ```powershell
+  ```bash
   docker compose build
 
   ```
 3. コンテナを起動
-  ```powershell
+  ```bash
   docker compose up
   ```
 ### 4. データベース・テーブルの作成
 
 #### 4-1. dockerコマンドを使用しMySQLコンテナ内に入ります。
-```powershell
+```bash
 docker exec -it mysql-kadai mysql
 ```
 
 #### 4-2. データベースの作成と使用
-```powershell
+```bash
 CREATE DATABASE kadai;
 USE kadai;
 ```
 
 #### 4-3. テーブルの作成
-```powershell
+```bash
 CREATE TABLE `kadai_post` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `body` TEXT NOT NULL,
@@ -283,6 +283,19 @@ CREATE TABLE `kadai_post` (
 );
 ```
 
+#### 4-4. コンテナから退出
+```bash
+exit
+```
+
+### アクセス方法
+コンテナ起動後、ブラウザで以下にアクセスしてください。
+http://{インスタンスのパブリックipアドレス}/index.php
+
+### コンテナの停止方法
+```bash
+docker compose down
+```
 完成画面
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42013454-c913-4bd0-bf25-d092479a95d3" />
 
