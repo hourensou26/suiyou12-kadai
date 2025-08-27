@@ -292,12 +292,11 @@ exit
 コンテナ起動後、ブラウザで以下にアクセスしてください。
 http://{インスタンスのパブリックipアドレス}/index.php
 
+完成画面
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42013454-c913-4bd0-bf25-d092479a95d3" />
+
 ### コンテナの停止方法
 ```bash
 docker compose down
 ```
-完成画面
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42013454-c913-4bd0-bf25-d092479a95d3" />
-
-
 
