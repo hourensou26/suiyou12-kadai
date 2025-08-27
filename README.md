@@ -147,6 +147,55 @@ $select_sth->execute();
 ?>
 <head>
   <title>画像投稿できる掲示板</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h2 { margin-bottom: 16px; }
+    form {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    input[type="file"] { margin: 8px 0; }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+    dl {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    dt { font-weight: bold; }
+    dd { margin: 0 0 8px 0; }
+    img {
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+  </style>
 </head>
 
 <!-- フォームのPOST先はこのファイル自身にする -->
@@ -184,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const imageInput = document.getElementById("imageInput");
   imageInput.addEventListener("change", () => {
     if (imageInput.files.length < 1) {
-      // 未選択の場合
       return;
     }
     if (imageInput.files[0].size > 5 * 1024 * 1024) {
@@ -195,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 ```
 ### 3. 実行
 mysql内のMySQLサーバーに接続するためにコンテナを起動します
